@@ -84,19 +84,25 @@ const TestEditor = () => {
   const [ serialState, setSerialState ] = useState<"XML" | "JSON">("XML")
   return (
     <>
+      <div className="MainHead">
+        <h1>PyScratch</h1>
+      </div>
       <div className="hstack">
-      <div style={{ height: "600px", width: "600px" }}>
+      <div style={{ height: "706px", width: "700px" }}>
         <BlocklyWorkspace
           key={serialState}
           toolboxConfiguration={toolboxConfiguration}
-          workspaceConfiguration={{
-            grid: {
-              spacing: 20,
-              length: 3,
-              colour: "#ccc",
-              snap: true,
-            },
-          }}
+          // make the workspace background color black
+            workspaceConfiguration={{
+                grid: {
+                    spacing: 20,
+                    length: 3,
+                    colour: '#ccc',
+                    snap: true
+                }
+            }}
+
+
           initialXml={serialState === "XML" ? ConfigFiles.INITIAL_XML : undefined}
           initialJson={serialState === "JSON" ? ConfigFiles.INITIAL_JSON : undefined}
           className="fill-height"
@@ -105,9 +111,9 @@ const TestEditor = () => {
           onJsonChange={onJsonChange}
         />
       </div >
-        <div style={{paddingTop: "40px"}}>
+        <div>
         <textarea
-            style={{ height: "600px", width: "600px"}}
+            style={{ height: "700px", width: "700px"}}
             value={generatedCode}
             readOnly
         />

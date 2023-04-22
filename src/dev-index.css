@@ -8,7 +8,6 @@
 }
 .fill-height {
   height: 100%;
-  padding-top: 50px;
   width: 100%;
 }
 
@@ -38,4 +37,25 @@
 }
 .blocklyTreeRow {
   height: initial;
+}
+#blocklyDiv {
+  background: #fff;
+}
+.blocklyToolboxDiv {
+  background: #000;
+  border-radius: 20px;
+}
+.blocklyWorkspace {
+  background-color: #fff;
+}
+
+.MainHead {
+  background: #fff;
+  color: #000;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
