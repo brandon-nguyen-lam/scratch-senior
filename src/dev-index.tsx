@@ -84,8 +84,8 @@ const TestEditor = () => {
   const [ serialState, setSerialState ] = useState<"XML" | "JSON">("XML")
   return (
     <>
-      <div style={{ height: "600px", width: "800px" }}>
-        <button onClick={(e)=>setSerialState((e.target as HTMLElement).innerText == "XML" ? "XML" : "JSON")}>{serialState == "XML" ? "JSON" : "XML"} </button>
+      <div className="hstack">
+      <div style={{ height: "600px", width: "600px" }}>
         <BlocklyWorkspace
           key={serialState}
           toolboxConfiguration={toolboxConfiguration}
@@ -104,14 +104,15 @@ const TestEditor = () => {
           onXmlChange={onXmlChange}
           onJsonChange={onJsonChange}
         />
+      </div >
+        <div style={{paddingTop: "40px"}}>
+        <textarea
+            style={{ height: "600px", width: "600px"}}
+            value={generatedCode}
+            readOnly
+        />
+        </div>
       </div>
-      <pre>{generatedXml}</pre>
-      <p>{generatedJson}</p>
-      <textarea
-        style={{ height: "200px", width: "400px" }}
-        value={generatedCode}
-        readOnly
-      />
     </>
   );
 };
