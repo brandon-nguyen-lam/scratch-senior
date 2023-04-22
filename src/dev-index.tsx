@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import Blockly from "blockly";
 import { javascriptGenerator } from "blockly/javascript";
+import { pythonGenerator } from "blockly/python";
 
 import { BlocklyWorkspace } from "./index";
 import ConfigFiles from "./initContent/content";
@@ -69,7 +70,7 @@ const TestEditor = () => {
     setGeneratedXml(newXml);
     const newJson = JSON.stringify(Blockly.serialization.workspaces.save(workspace));
     setGeneratedJson(newJson);
-    const code = javascriptGenerator.workspaceToCode(workspace);
+    const code = pythonGenerator.workspaceToCode(workspace);
     setGeneratedCode(code);
   }, []);
 
